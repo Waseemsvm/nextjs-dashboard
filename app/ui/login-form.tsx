@@ -13,7 +13,7 @@ import { authenticate } from '@/app/lib/actions';
 
 export default function LoginForm() {
 
-  const [errorMessage, formAction, isPending] = useFormState(
+  const [errorMessage, formAction/* , isPending */] = useFormState(
     authenticate,
     undefined,
   );
@@ -67,7 +67,8 @@ export default function LoginForm() {
           </div>
         </div>
         {/* <LoginButton /> */}
-        <button className="mt-4 w-full" aria-disabled={isPending}>
+        {/* <button className="mt-4 w-full" aria-disabled={isPending}> */}
+        <button className="mt-4 w-full" aria-disabled="false">
           Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
         </button>
         <div className="flex h-8 items-end space-x-1">
